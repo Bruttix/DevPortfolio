@@ -5,8 +5,10 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledContactSection = styled.section`
-  max-width: 600px;
-  margin: 0 auto 100px;
+  min-height: 100vh;
+  padding: 0;
+  background-color: brown;
+
   text-align: center;
 
   @media (max-width: 768px) {
@@ -15,7 +17,7 @@ const StyledContactSection = styled.section`
 
   .overline {
     display: block;
-    margin-bottom: 20px;
+    margin: 0;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-md);

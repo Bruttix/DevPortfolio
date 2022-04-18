@@ -8,7 +8,7 @@ import { usePrefersReducedMotion } from '@hooks';
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex;
   min-height: 100vh;
   padding: 0;
   background-color: red;
@@ -33,6 +33,7 @@ const StyledHeroSection = styled.section`
     margin-top: 10px;
     color: var(--slate);
     line-height: 0.9;
+    text-align: center;
   }
 
   p {
@@ -44,6 +45,7 @@ const StyledHeroSection = styled.section`
     margin-top: 50px;
   }
 `;
+
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -529,7 +531,6 @@ const Hero = () => {
   const items = [one, two, three, four, five];
 
   return (
-  
     <StyledHeroSection>
       {prefersReducedMotion ? (
         <>
@@ -547,8 +548,8 @@ const Hero = () => {
             ))}
         </TransitionGroup>
         )}
-      </StyledHeroSection>
-  
+     
+    </StyledHeroSection>
   );
 };
 

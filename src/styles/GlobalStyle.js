@@ -140,7 +140,7 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 0;
 
     @media (max-width: 768px) {
       padding: 80px 0;
@@ -174,10 +174,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .numbered-heading {
-    display: flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
-    position: relative;
-    margin: 10px 0 40px;
+    margin: 0px;
     width: 100%;
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;

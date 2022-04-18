@@ -6,21 +6,29 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledAboutSection = styled.section`
-  max-width: 900px;
-
+  min-height: 100vh;
+  text-align: center;
+  background-color: blue;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   .inner {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    justify-items: center;
+    align-content: center;
+    grid-template-columns: 7fr 2fr;
     grid-gap: 50px;
-
     @media (max-width: 768px) {
       display: block;
     }
   }
 `;
 const StyledText = styled.div`
+  padding-left: 30%;
   ul.skills-list {
     display: grid;
+    justify-content: center;
+    align-content: center;
     grid-template-columns: repeat(2, minmax(140px, 200px));
     grid-gap: 0 10px;
     padding: 0;
@@ -90,7 +98,7 @@ const StyledPic = styled.div`
     &:before,
     &:after {
       content: '';
-      display: block;
+      display: inline-block;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -189,11 +197,10 @@ const About = () => {
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
+      
 
       <div className="inner">
-
         <StyledText>
-          <div>
             <p>
               Hello! My name is Brandon and I'm a <a href="https://www.marines.mil/">Marine Corps veteran</a>,{' '}
               with a bachelors degree in Computer Science.
@@ -205,17 +212,14 @@ const About = () => {
               A motto common amongst us engineers in the Marines that I find most prevalent now as I've transitioned fully into the world of technology.
               Ever Positive, Never Negative, and Ever Learning
             </p>
-
             <p>
               Straight out of the Marines in 2018, recognizing my career change from utilities engineer work to more engineering technology focused.
               I had the privilege of attending <a href="https://military.microsoft.com/programs/microsoft-software-systems-academy/"> Microsoft's Software Systems Academy (MSSA)</a>,{''}
               which was a six month bootcamp based on cyber security and then fast-forward to today, and I’ve finished studying at
               <a href="https://www.utsa.edu/">University of Texas at San Antonio (UTSA)</a>,{' '} for a bachelors degree in Computer Science (completion May 2022).
             </p>
-
             <p>Here are a few technologies I’ve been working with recently:</p>
-          </div>
-
+          
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>

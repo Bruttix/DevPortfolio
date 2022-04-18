@@ -8,21 +8,29 @@ import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsGrid = styled.ul`
-  ${({ theme }) => theme.mixins.resetList};
 
+  ${({ theme }) => theme.mixins.resetList};
+    
   a {
     position: relative;
     z-index: 1;
   }
 `;
-
+const StyledSection = styled.section`
+  section {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+  }
+`;
 const StyledProject = styled.li`
   position: relative;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
-
+   
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
   }
@@ -346,6 +354,7 @@ const Featured = () => {
   }, []);
 
   return (
+   <StyledSection>
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
         Some Things I’ve Built
@@ -411,6 +420,7 @@ const Featured = () => {
           })}
       </StyledProjectsGrid>
     </section>
+   </StyledSection>
   );
 };
 

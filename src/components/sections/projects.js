@@ -11,7 +11,9 @@ const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  min-height: 100vh;
+  padding: 0;
+  background-color: yellow;
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
   }
